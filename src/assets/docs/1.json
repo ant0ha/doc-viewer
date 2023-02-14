@@ -1,0 +1,19 @@
+{
+    "pages": [
+        {
+            "imageUrl": "/assets/images/1.png"
+        },
+        {
+            "imageUrl": "/assets/images/2.png"
+        },
+        {
+            "imageUrl": "/assets/images/3.png"
+        },
+        {
+            "imageUrl": "/assets/images/4.png"
+        },
+        {
+            "imageUrl": "/assets/images/5.png"
+        }
+    ]
+}
