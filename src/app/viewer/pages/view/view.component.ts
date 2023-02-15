@@ -11,6 +11,7 @@ import { Doc } from 'src/app/api/types/docs/doc.entity';
 export class ViewComponent implements OnInit {
 
   doc: Doc;
+  zoom: number = 100;
 
   constructor(
     protected docsApiService: DocsApiService,

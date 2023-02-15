@@ -1,0 +1,15 @@
+<div 
+    class="view-document"
+>
+    <div 
+        class="view-document__content"
+        [style.transform]="'scale(' + (zoom / 100) + ')'"
+    >
+        <app-view-page
+            *ngFor="let page of doc.pages"
+            [page]="page"
+        >
+
+        </app-view-page>
+    </div>
+</div>

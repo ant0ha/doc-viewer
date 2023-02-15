@@ -1,5 +1,13 @@
-<div class="view">
+<main class="view">
     <ng-container *ngIf="doc">
-        {{ doc.pages }}
+        <app-view-header
+            [doc]="doc"
+            [(zoom)]="zoom"
+        ></app-view-header>
+
+        <app-view-document 
+            [doc]="doc"
+            [zoom]="zoom"
+        ></app-view-document>
     </ng-container>
-</div>
+</main>

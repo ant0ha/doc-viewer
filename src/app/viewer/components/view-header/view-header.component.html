@@ -1,0 +1,11 @@
+<header class="view-header">
+    <h1 class="view-header__doc-name">
+        {{ doc.name }}
+    </h1>
+
+    <div class="view-header__tools">
+        {{ zoom }}
+        <button (click)="zoomIn()">+</button>
+        <button (click)="zoomOut()">-</button>
+    </div>
+</header>
