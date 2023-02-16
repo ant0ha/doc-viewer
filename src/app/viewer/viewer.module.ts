@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ViewHeaderComponent } from './components/view-header/view-header.component';
 import { ViewDocumentComponent } from './components/view-document/view-document.component';
 import { ViewPageComponent } from './components/view-page/view-page.component';
+import { ViewAnnotationComponent } from './components/view-annotation/view-annotation.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ViewPageComponent } from './components/view-page/view-page.component';
     ViewComponent,
     ViewHeaderComponent,
     ViewDocumentComponent,
-    ViewPageComponent
+    ViewPageComponent,
+    ViewAnnotationComponent
   ],
   imports: [
     CommonModule,

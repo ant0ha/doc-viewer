@@ -1,0 +1,29 @@
+.view-annotation {
+  position: absolute;
+}
+
+.view-annotation__indicator {
+  background-color: yellow;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.view-annotation__type-selector {
+  background-color: darkcyan;
+  position: absolute;
+  left: 40px;
+  bottom: -40px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+
+.view-annotation__type img {
+  width: 20px;
+}
+
+.view-annotation__type:not(:last-child) {
+  margin-right: 10px;
+}

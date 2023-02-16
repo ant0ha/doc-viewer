@@ -1,0 +1,24 @@
+<div
+  class="view-annotation"
+  [style.top.px]="annotation.y - radius"
+  [style.left.px]="annotation.x - radius"
+>
+  <div
+    class="view-annotation__indicator"
+    [style.width.px]="radius * 2"
+    [style.height.px]="radius * 2"
+  ></div>
+
+  <div
+    class="view-annotation__type-selector"
+    *ngIf="!annotation.type"
+  >
+    <div
+      *ngFor="let annotationType of annotationTypes"
+      class="view-annotation__type"
+      (click)="annotation.type = annotationType"
+    >
+      <img [src]="'/assets/images/annotation-' + annotationType + '.svg'" alt="">
+    </div>
+  </div>
+</div>
