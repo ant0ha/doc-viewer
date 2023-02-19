@@ -9,6 +9,13 @@
     [style.height.px]="radius * 2"
   ></div>
 
+  <div
+    class="view-annotation__remove"
+    (click)="remove.emit(annotation)"
+  >
+    &times;
+  </div>
+
   <div class="view-annotation__content">
     <div
       class="view-annotation__type-selector"
@@ -27,6 +34,7 @@
       <ng-container [ngSwitch]="annotation.type">
         <app-view-annotation-image
           *ngSwitchCase="annotationTypeEnum.Image"
+          [annotation]="annotation"
         ></app-view-annotation-image>
         <app-view-annotation-text
           *ngSwitchCase="annotationTypeEnum.Text"

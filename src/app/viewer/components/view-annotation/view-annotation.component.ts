@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Annotation } from '../../annotations/annotation';
 import { AnnotationType } from '../../annotations/annotation-type';
 
@@ -10,6 +10,7 @@ import { AnnotationType } from '../../annotations/annotation-type';
 export class ViewAnnotationComponent {
 
   @Input() annotation: Annotation;
+  @Output() remove: EventEmitter<Annotation> = new EventEmitter();
 
   radius = 20;
   annotationTypes = [

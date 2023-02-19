@@ -38,4 +38,14 @@ export class ViewPageComponent implements OnInit {
 
     this.annotationsService.addAnnotation(annotation);
   }
+
+  onRemove(annotation: Annotation) {
+    const annotations = this.annotationsService.annotations$.getValue();
+    const index = annotations.indexOf(annotation);
+
+    if (index !== -1) {
+      annotations.splice(index, 1);
+      this.annotationsService.annotations$.next(annotations);
+    }
+  }
 }

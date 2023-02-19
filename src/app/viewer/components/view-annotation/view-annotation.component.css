@@ -11,7 +11,7 @@
 .view-annotation__content {
   position: absolute;
   left: 40px;
-  bottom: -40px;
+  top: 40px;
 }
 
 .view-annotation__type-selector {
@@ -30,4 +30,19 @@
 
 .view-annotation__type:not(:last-child) {
   margin-right: 10px;
+}
+
+.view-annotation__remove {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+
+  width: 15px;
+  height: 15px;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  line-height: 15px;
+  opacity: 0.5;
 }
