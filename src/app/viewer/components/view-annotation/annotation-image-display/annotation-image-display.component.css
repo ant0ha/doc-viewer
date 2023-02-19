@@ -1,0 +1,10 @@
+.annotation-image-display {
+  max-width: 200px;
+  opacity: 0.7;
+  background-color: yellow;
+  padding: 10px;
+}
+
+.annotation-image-display img {
+  max-width: 100%;
+}

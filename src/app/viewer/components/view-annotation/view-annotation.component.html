@@ -3,12 +3,6 @@
   [style.top.px]="annotation.y"
   [style.left.px]="annotation.x"
 >
-  <!-- <div
-    class="view-annotation__indicator"
-    [style.width.px]="radius * 2"
-    [style.height.px]="radius * 2"
-  ></div> -->
-
   <div
     class="view-annotation__remove"
     (click)="remove.emit(annotation)"
@@ -31,16 +25,31 @@
     </div>
 
     <ng-template #hasType>
-      <ng-container [ngSwitch]="annotation.type">
-        <app-view-annotation-image
-          *ngSwitchCase="annotationTypeEnum.Image"
-          [annotation]="annotation"
-        ></app-view-annotation-image>
-        <app-view-annotation-text
-          *ngSwitchCase="annotationTypeEnum.Text"
-          [annotation]="annotation"
-        ></app-view-annotation-text>
+      <ng-container *ngIf="!annotation.completed; else annotationDisplay">
+        <ng-container [ngSwitch]="annotation.type">
+          <app-annotation-image-add
+            *ngSwitchCase="annotationTypeEnum.Image"
+            [annotation]="annotation"
+          ></app-annotation-image-add>
+          <app-annotation-text-add
+            *ngSwitchCase="annotationTypeEnum.Text"
+            [annotation]="annotation"
+          ></app-annotation-text-add>
+        </ng-container>
       </ng-container>
+
+      <ng-template #annotationDisplay>
+        <ng-container [ngSwitch]="annotation.type">
+          <app-annotation-image-display
+            *ngSwitchCase="annotationTypeEnum.Image"
+            [annotation]="annotation"
+          ></app-annotation-image-display>
+          <app-annotation-text-display
+            *ngSwitchCase="annotationTypeEnum.Text"
+            [annotation]="annotation"
+          ></app-annotation-text-display>
+        </ng-container>
+      </ng-template>
     </ng-template>
   </div>
 </div>

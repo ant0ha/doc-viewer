@@ -2,13 +2,6 @@
   position: absolute;
 }
 
-/* .view-annotation__indicator {
-  background-color: yellow;
-  border-radius: 50%;
-  opacity: 0.5;
-} */
-
-
 .view-annotation__type-selector {
   background-color: var(--brand-color);
   display: flex;
@@ -17,6 +10,10 @@
   padding: 0 10px;
   border-radius: 5px;
   line-height: 1;
+}
+
+.view-annotation__type {
+  cursor: pointer;
 }
 
 .view-annotation__type img {
@@ -29,8 +26,8 @@
 
 .view-annotation__remove {
   position: absolute;
-  top: -10px;
-  right: -10px;
+  top: -15px;
+  left: -15px;
 
   width: 15px;
   height: 15px;
@@ -39,5 +36,4 @@
   border-radius: 50%;
   cursor: pointer;
   line-height: 15px;
-  opacity: 0.5;
 }

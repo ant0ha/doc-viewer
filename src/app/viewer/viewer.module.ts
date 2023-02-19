@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { ViewerRoutingModule } from './viewer-routing.module';
 import { ViewComponent } from './pages/view/view.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -8,13 +7,12 @@ import { ViewHeaderComponent } from './components/view-header/view-header.compon
 import { ViewDocumentComponent } from './components/view-document/view-document.component';
 import { ViewPageComponent } from './components/view-page/view-page.component';
 import { ViewAnnotationComponent } from './components/view-annotation/view-annotation.component';
-import { ViewAnnotationTextComponent } from './components/view-annotation-text/view-annotation-text.component';
 import { ViewAnnotationImageComponent } from './components/view-annotation-image/view-annotation-image.component';
 import { FormsModule } from '@angular/forms';
-import { AnntotationImageDisplayComponent } from './components/view-annotation/anntotation-image-display/anntotation-image-display.component';
-import { AnntotationImageAddComponent } from './components/view-annotation/anntotation-image-add/anntotation-image-add.component';
-import { AnntotationTextAddComponent } from './components/view-annotation/anntotation-text-add/anntotation-text-add.component';
-import { AnntotationTextDisplayComponent } from './components/view-annotation/anntotation-text-display/anntotation-text-display.component';
+import { AnnotationImageAddComponent } from './components/view-annotation/annotation-image-add/annotation-image-add.component';
+import { AnnotationImageDisplayComponent } from './components/view-annotation/annotation-image-display/annotation-image-display.component';
+import { AnnotationTextDisplayComponent } from './components/view-annotation/annotation-text-display/annotation-text-display.component';
+import { AnnotationTextAddComponent } from './components/view-annotation/annotation-text-add/annotation-text-add.component';
 
 
 @NgModule({
@@ -24,12 +22,11 @@ import { AnntotationTextDisplayComponent } from './components/view-annotation/an
     ViewDocumentComponent,
     ViewPageComponent,
     ViewAnnotationComponent,
-    ViewAnnotationTextComponent,
     ViewAnnotationImageComponent,
-    AnntotationImageDisplayComponent,
-    AnntotationImageAddComponent,
-    AnntotationTextAddComponent,
-    AnntotationTextDisplayComponent
+    AnnotationImageAddComponent,
+    AnnotationImageDisplayComponent,
+    AnnotationTextDisplayComponent,
+    AnnotationTextAddComponent,
   ],
   imports: [
     CommonModule,
