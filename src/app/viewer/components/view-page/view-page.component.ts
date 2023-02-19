@@ -12,6 +12,7 @@ import { AnnotationsService } from '../../services/annotations.service';
 export class ViewPageComponent implements OnInit {
 
   @Input() page: Page;
+  @Input() zoom: number;
 
   annotations$: Observable<Annotation[]>;
 

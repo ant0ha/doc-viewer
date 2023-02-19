@@ -10,6 +10,7 @@ import { AnnotationType } from '../../annotations/annotation-type';
 export class ViewAnnotationComponent {
 
   @Input() annotation: Annotation;
+  @Input() zoom: number;
   @Output() remove: EventEmitter<Annotation> = new EventEmitter();
 
   annotationTypes = [

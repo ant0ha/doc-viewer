@@ -7,6 +7,7 @@ import { Directive, HostBinding, HostListener, Input, ElementRef } from '@angula
 export class AnnotationMoveDirective {
 
   @Input() annotation: Annotation;
+  @Input() zoom: number;
 
   private isMoving = false;
   private offsetX: number;
@@ -30,15 +31,19 @@ export class AnnotationMoveDirective {
     event.preventDefault();
     this.isMoving = true;
 
-    this.offsetX = this.elRef.nativeElement.offsetLeft - event.clientX;
-    this.offsetY = this.elRef.nativeElement.offsetTop - event.clientY;
+    const zoomRatio = this.zoom / 100;
+
+    this.offsetX = this.elRef.nativeElement.offsetLeft - event.clientX / zoomRatio;
+    this.offsetY = this.elRef.nativeElement.offsetTop - event.clientY / zoomRatio;
   }
 
   @HostListener('document:mousemove', ['$event'])
   mouseMove(event: MouseEvent) {
     if (this.isMoving) {
-      const x = event.clientX + this.offsetX;
-      const y = event.clientY + this.offsetY;
+      const zoomRatio = this.zoom / 100;
+
+      const x = event.clientX / zoomRatio + this.offsetX;
+      const y = event.clientY / zoomRatio + this.offsetY;
 
       if (x < 0 || y < 0) {
         event.preventDefault();

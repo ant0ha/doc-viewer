@@ -5,6 +5,7 @@
     <app-view-annotation
       *ngFor="let annotation of annotations$ | async"
       [annotation]="annotation"
+      [zoom]="zoom"
       (remove)="onRemove($event)"
     ></app-view-annotation>
   </div>
