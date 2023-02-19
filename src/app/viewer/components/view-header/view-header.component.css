@@ -1,9 +1,9 @@
 .view-header {
-    height: var(--header-height);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    background-color: var(--brand-color);
-    color: var(--brand-text-color);
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: var(--brand-color);
+  color: var(--brand-text-color);
 }

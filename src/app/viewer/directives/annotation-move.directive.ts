@@ -37,8 +37,16 @@ export class AnnotationMoveDirective {
   @HostListener('document:mousemove', ['$event'])
   mouseMove(event: MouseEvent) {
     if (this.isMoving) {
-      this.annotation.coords.x = event.clientX + this.offsetX;
-      this.annotation.coords.y = event.clientY + this.offsetY;
+      const x = event.clientX + this.offsetX;
+      const y = event.clientY + this.offsetY;
+
+      if (x < 0 || y < 0) {
+        event.preventDefault();
+        return;
+      }
+
+      this.annotation.coords.x = x;
+      this.annotation.coords.y = y;
     }
   }
 
