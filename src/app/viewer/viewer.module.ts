@@ -11,6 +11,10 @@ import { ViewAnnotationComponent } from './components/view-annotation/view-annot
 import { ViewAnnotationTextComponent } from './components/view-annotation-text/view-annotation-text.component';
 import { ViewAnnotationImageComponent } from './components/view-annotation-image/view-annotation-image.component';
 import { FormsModule } from '@angular/forms';
+import { AnntotationImageDisplayComponent } from './components/view-annotation/anntotation-image-display/anntotation-image-display.component';
+import { AnntotationImageAddComponent } from './components/view-annotation/anntotation-image-add/anntotation-image-add.component';
+import { AnntotationTextAddComponent } from './components/view-annotation/anntotation-text-add/anntotation-text-add.component';
+import { AnntotationTextDisplayComponent } from './components/view-annotation/anntotation-text-display/anntotation-text-display.component';
 
 
 @NgModule({
@@ -21,7 +25,11 @@ import { FormsModule } from '@angular/forms';
     ViewPageComponent,
     ViewAnnotationComponent,
     ViewAnnotationTextComponent,
-    ViewAnnotationImageComponent
+    ViewAnnotationImageComponent,
+    AnntotationImageDisplayComponent,
+    AnntotationImageAddComponent,
+    AnntotationTextAddComponent,
+    AnntotationTextDisplayComponent
   ],
   imports: [
     CommonModule,

@@ -12,7 +12,6 @@ export class ViewAnnotationComponent {
   @Input() annotation: Annotation;
   @Output() remove: EventEmitter<Annotation> = new EventEmitter();
 
-  radius = 20;
   annotationTypes = [
     AnnotationType.Text,
     AnnotationType.Image,

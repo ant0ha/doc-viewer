@@ -2,17 +2,12 @@
   position: absolute;
 }
 
-.view-annotation__indicator {
+/* .view-annotation__indicator {
   background-color: yellow;
   border-radius: 50%;
   opacity: 0.5;
-}
+} */
 
-.view-annotation__content {
-  position: absolute;
-  left: 40px;
-  top: 40px;
-}
 
 .view-annotation__type-selector {
   background-color: var(--brand-color);
