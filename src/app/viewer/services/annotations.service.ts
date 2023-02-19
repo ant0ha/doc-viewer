@@ -15,8 +15,18 @@ export class AnnotationsService {
     return this._annotations$;
   }
 
-  addAnnotation(annotation: Annotation) {
+  add(annotation: Annotation) {
     this._annotations$.next(this._annotations$.getValue().concat(annotation));
+  }
+
+  remove(annotation: Annotation) {
+    const annotations = this.annotations$.getValue();
+    const index = annotations.indexOf(annotation);
+
+    if (index !== -1) {
+      annotations.splice(index, 1);
+      this.annotations$.next(annotations);
+    }
   }
 
   toJSON(): string {

@@ -38,16 +38,10 @@ export class ViewPageComponent implements OnInit {
 
     const annotation = new Annotation(this.page.number, coords);
 
-    this.annotationsService.addAnnotation(annotation);
+    this.annotationsService.add(annotation);
   }
 
   onRemove(annotation: Annotation) {
-    const annotations = this.annotationsService.annotations$.getValue();
-    const index = annotations.indexOf(annotation);
-
-    if (index !== -1) {
-      annotations.splice(index, 1);
-      this.annotationsService.annotations$.next(annotations);
-    }
+    this.annotationsService.remove(annotation);
   }
 }
