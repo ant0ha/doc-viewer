@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { catchError, Observable, throwError } from 'rxjs';
 import { DocsApiService } from 'src/app/api/services/docs-api.service';
 import { Doc } from 'src/app/api/types/docs/doc.entity';
 
@@ -10,7 +11,7 @@ import { Doc } from 'src/app/api/types/docs/doc.entity';
 })
 export class ViewComponent implements OnInit {
 
-  doc: Doc;
+  doc$: Observable<Doc>;
   zoom: number = 100;
 
   constructor(
@@ -21,19 +22,14 @@ export class ViewComponent implements OnInit {
   ngOnInit() {
     const docId: number = Number(this.route.snapshot.paramMap.get('id'));
 
-    this.loadDoc(docId);
-  }
+    this.doc$ = this.docsApiService.getDoc(docId)
+      .pipe(
+        catchError((e) => {
+          console.error(e);
+          alert('Document not found!');
 
-  loadDoc(docId: number) {
-    this.docsApiService.getDoc(docId)
-      .subscribe(
-        {
-          next: (doc) => this.doc = doc,
-          error: (e) => {
-            console.error(e);
-            alert('Document not found!');
-          }
-        }
+          return throwError(() => {});
+        })
       )
     ;
   }

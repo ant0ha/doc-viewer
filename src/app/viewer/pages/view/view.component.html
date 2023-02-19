@@ -1,13 +1,13 @@
 <main class="view">
-    <ng-container *ngIf="doc">
-        <app-view-header
-            [doc]="doc"
-            [(zoom)]="zoom"
-        ></app-view-header>
+  <ng-container *ngIf="doc$ | async as doc">
+    <app-view-header
+      [doc]="doc"
+      [(zoom)]="zoom"
+    ></app-view-header>
 
-        <app-view-document 
-            [doc]="doc"
-            [zoom]="zoom"
-        ></app-view-document>
-    </ng-container>
+    <app-view-document
+      [doc]="doc"
+      [zoom]="zoom"
+    ></app-view-document>
+  </ng-container>
 </main>

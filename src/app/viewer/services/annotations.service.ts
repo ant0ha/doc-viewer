@@ -18,4 +18,20 @@ export class AnnotationsService {
   addAnnotation(annotation: Annotation) {
     this._annotations$.next(this._annotations$.getValue().concat(annotation));
   }
+
+  toJSON(): string {
+    const data = this.annotations$.getValue()
+      .filter((annotation: Annotation) => annotation.completed)
+      .map((annotation: Annotation) => {
+        return {
+          page: annotation.page,
+          type: annotation.type,
+          content: annotation.content,
+          coords: annotation.coords,
+        };
+      })
+    ;
+
+    return JSON.stringify(data);
+  }
 }

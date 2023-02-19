@@ -1,3 +1,4 @@
+import { AnnotationsService } from './../../services/annotations.service';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Doc } from 'src/app/api/types/docs/doc.entity';
 
@@ -15,6 +16,10 @@ export class ViewHeaderComponent {
   protected zoomStep = 10;
   protected maxZoom = 200;
 
+  constructor(
+    private annotationsService: AnnotationsService,
+  ) {}
+
   zoomIn() {
     if (this.zoom < this.maxZoom) {
       this.zoom += 10;
@@ -27,5 +32,9 @@ export class ViewHeaderComponent {
       this.zoom -= 10;
       this.zoomChange.emit(this.zoom);
     }
+  }
+
+  save() {
+    console.log('data', this.annotationsService.toJSON());
   }
 }
