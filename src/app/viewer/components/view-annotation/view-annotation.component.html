@@ -1,7 +1,8 @@
 <div
   class="view-annotation"
-  [style.top.px]="annotation.y"
-  [style.left.px]="annotation.x"
+  [style.top.px]="annotation.coords.y"
+  [style.left.px]="annotation.coords.x"
+  appAnnotationMove
 >
   <div
     class="view-annotation__remove"

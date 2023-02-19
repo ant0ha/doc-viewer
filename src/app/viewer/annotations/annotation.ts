@@ -1,28 +1,25 @@
+import { AnnotationCoords } from "./annotation-coords";
 import { AnnotationType } from "./annotation-type";
 
 export class Annotation {
 
-  private _x: number;
-  private _y: number;
+  private _coords: AnnotationCoords;
   private _page: number;
   private _type: AnnotationType;
   private _completed = false;
   private _content: string;
 
-  set x(x: number) {
-    this._x = x;
+  constructor(page: number, coords: AnnotationCoords) {
+    this.page = page;
+    this.coords = coords;
   }
 
-  get x(): number {
-    return this._x;
+  set coords(coords: AnnotationCoords) {
+    this._coords = coords;
   }
 
-  set y(y: number) {
-    this._y = y;
-  }
-
-  get y(): number {
-    return this._y;
+  get coords(): AnnotationCoords {
+    return this._coords;
   }
 
   set page(page: number) {

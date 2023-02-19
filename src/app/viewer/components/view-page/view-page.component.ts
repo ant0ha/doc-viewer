@@ -30,11 +30,12 @@ export class ViewPageComponent implements OnInit {
   }
 
   clickOnImage(event: PointerEvent | MouseEvent) {
-    const annotation = new Annotation();
+    const coords = {
+      x: event.offsetX,
+      y: event.offsetY
+    };
 
-    annotation.x = event.offsetX;
-    annotation.y = event.offsetY;
-    annotation.page = this.page.number;
+    const annotation = new Annotation(this.page.number, coords);
 
     this.annotationsService.addAnnotation(annotation);
   }
