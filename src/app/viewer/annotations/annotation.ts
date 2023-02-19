@@ -7,6 +7,7 @@ export class Annotation {
   private _page: number;
   private _type: AnnotationType;
   private _completed = false;
+  private _content: string;
 
   set x(x: number) {
     this._x = x;
@@ -46,5 +47,13 @@ export class Annotation {
 
   set completed(completed: boolean) {
     this._completed = completed;
+  }
+
+  get content(): string {
+    return this._content;
+  }
+
+  set content(content: string) {
+    this._content = content;
   }
 }

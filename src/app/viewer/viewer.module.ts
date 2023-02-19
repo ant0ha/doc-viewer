@@ -8,6 +8,9 @@ import { ViewHeaderComponent } from './components/view-header/view-header.compon
 import { ViewDocumentComponent } from './components/view-document/view-document.component';
 import { ViewPageComponent } from './components/view-page/view-page.component';
 import { ViewAnnotationComponent } from './components/view-annotation/view-annotation.component';
+import { ViewAnnotationTextComponent } from './components/view-annotation-text/view-annotation-text.component';
+import { ViewAnnotationImageComponent } from './components/view-annotation-image/view-annotation-image.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,12 +19,15 @@ import { ViewAnnotationComponent } from './components/view-annotation/view-annot
     ViewHeaderComponent,
     ViewDocumentComponent,
     ViewPageComponent,
-    ViewAnnotationComponent
+    ViewAnnotationComponent,
+    ViewAnnotationTextComponent,
+    ViewAnnotationImageComponent
   ],
   imports: [
     CommonModule,
     ViewerRoutingModule,
     HttpClientModule,
+    FormsModule,
   ]
 })
 export class ViewerModule { }

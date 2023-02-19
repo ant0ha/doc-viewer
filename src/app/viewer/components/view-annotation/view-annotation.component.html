@@ -9,16 +9,30 @@
     [style.height.px]="radius * 2"
   ></div>
 
-  <div
-    class="view-annotation__type-selector"
-    *ngIf="!annotation.type"
-  >
+  <div class="view-annotation__content">
     <div
-      *ngFor="let annotationType of annotationTypes"
-      class="view-annotation__type"
-      (click)="annotation.type = annotationType"
+      class="view-annotation__type-selector"
+      *ngIf="!annotation.type; else hasType"
     >
-      <img [src]="'/assets/images/annotation-' + annotationType + '.svg'" alt="">
+      <div
+        *ngFor="let annotationType of annotationTypes"
+        class="view-annotation__type"
+        (click)="annotation.type = annotationType"
+      >
+        <img [src]="'/assets/images/annotation-' + annotationType + '.svg'" alt="">
+      </div>
     </div>
+
+    <ng-template #hasType>
+      <ng-container [ngSwitch]="annotation.type">
+        <app-view-annotation-image
+          *ngSwitchCase="annotationTypeEnum.Image"
+        ></app-view-annotation-image>
+        <app-view-annotation-text
+          *ngSwitchCase="annotationTypeEnum.Text"
+          [annotation]="annotation"
+        ></app-view-annotation-text>
+      </ng-container>
+    </ng-template>
   </div>
 </div>

@@ -1,0 +1,22 @@
+<div class="view-annotation-text">
+  <div
+    *ngIf="annotation.completed; else annotationEdit"
+    class="view-annotation-text__view"
+  >
+    {{ annotation.content }}
+  </div>
+
+  <ng-template #annotationEdit>
+    <div class="view-annotation-text__edit">
+      <form (ngSubmit)="save()">
+        <input
+          type="text"
+          name="content"
+          [(ngModel)]="annotation.content"
+          #textInput
+          required
+        >
+      </form>
+    </div>
+  </ng-template>
+</div>

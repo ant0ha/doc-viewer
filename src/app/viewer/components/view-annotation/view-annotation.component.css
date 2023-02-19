@@ -8,16 +8,20 @@
   opacity: 0.5;
 }
 
-.view-annotation__type-selector {
-  background-color: darkcyan;
+.view-annotation__content {
   position: absolute;
   left: 40px;
   bottom: -40px;
+}
+
+.view-annotation__type-selector {
+  background-color: var(--brand-color);
   display: flex;
   align-items: center;
   height: 40px;
   padding: 0 10px;
   border-radius: 5px;
+  line-height: 1;
 }
 
 .view-annotation__type img {

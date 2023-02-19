@@ -16,4 +16,6 @@ export class ViewAnnotationComponent {
     AnnotationType.Text,
     AnnotationType.Image,
   ];
+
+  annotationTypeEnum = AnnotationType;
 }
