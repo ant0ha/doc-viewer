@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Page } from 'src/app/api/types/docs/page.entity';
 import { Annotation } from '../../annotations/annotation';
 import { AnnotationsService } from '../../services/annotations.service';
@@ -21,13 +21,7 @@ export class ViewPageComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.annotations$ = this.annotationsService.annotations$
-      .pipe(
-        map((annotations) => {
-          return annotations.filter(annotation => annotation.page === this.page.number);
-        })
-      )
-    ;
+    this.annotations$ = this.annotationsService.getPageAnnotations(this.page.number);
   }
 
   clickOnImage(event: PointerEvent | MouseEvent) {

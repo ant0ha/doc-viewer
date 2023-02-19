@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import { Annotation } from '../annotations/annotation';
 
 @Injectable({
@@ -27,6 +27,16 @@ export class AnnotationsService {
       annotations.splice(index, 1);
       this.annotations$.next(annotations);
     }
+  }
+
+  getPageAnnotations(pageNumber: number): Observable<Annotation[]> {
+    return this.annotations$
+      .pipe(
+        map((annotations) => {
+          return annotations.filter(annotation => annotation.page === pageNumber);
+        })
+      )
+    ;
   }
 
   toJSON(): string {
